@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState('');
@@ -25,19 +26,29 @@ const WaitlistForm = () => {
     setIsSubmitting(true);
     
     try {
-      // TODO: This will be connected to Supabase once the integration is activated
-      console.log('Email submitted:', email);
-      
-      // Simulate API call for now
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "🚀 You're on the list!",
-        description: "We'll notify you when SkillSync is ready to transform your hiring process.",
-      });
-      
-      setEmail('');
+      const { error } = await supabase
+        .from('waitlist_signups')
+        .insert([{ email }]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique constraint violation
+          toast({
+            title: "Already registered!",
+            description: "This email is already on our waitlist. We'll be in touch soon!",
+            variant: "destructive",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "🚀 You're on the list!",
+          description: "We'll notify you when SkillSync is ready to transform your hiring process.",
+        });
+        setEmail('');
+      }
     } catch (error) {
+      console.error('Error saving email:', error);
       toast({
         title: "Something went wrong",
         description: "Please try again in a moment.",

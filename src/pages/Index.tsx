@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import WaitlistForm from '@/components/WaitlistForm';
 import FeatureCard from '@/components/FeatureCard';
 import TestimonialCard from '@/components/TestimonialCard';
+import SignupCounter from '@/components/SignupCounter';
 import { 
   Rocket, 
   Brain, 
@@ -204,7 +204,9 @@ const Index = () => {
               <WaitlistForm />
             </div>
             
-            <p className="text-sm text-purple-300">
+            <SignupCounter />
+            
+            <p className="text-sm text-purple-300 mt-6">
               Be among the first 1,000 users and get lifetime early access pricing 🚀
             </p>
           </div>
