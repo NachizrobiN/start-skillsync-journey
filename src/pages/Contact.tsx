@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -222,7 +223,7 @@ const Contact = () => {
             <div className="bg-green-50 border border-green-200 rounded-lg p-8">
               <Clock className="h-12 w-12 text-green-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-green-800 mb-2">Average Response Time</h3>
-              <p className="text-3xl font-bold text-green-600 mb-2">< 4 hours</p>
+              <p className="text-3xl font-bold text-green-600 mb-2">&lt; 4 hours</p>
               <p className="text-green-700">
                 We typically respond to all inquiries within 4 hours during business hours
               </p>
