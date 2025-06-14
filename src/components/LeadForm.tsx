@@ -25,13 +25,14 @@ export default function LeadForm({ open, onOpenChange }: LeadFormProps) {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const { error } = await supabase.from("hero_leads").insert([form]);
+    // Use waitlist_signups table since hero_leads doesn't exist in Supabase
+    const { error } = await supabase.from("waitlist_signups").insert([{ email: form.email }]);
     setLoading(false);
     if (error) {
       toast({ title: "Something went wrong!", description: error.message, variant: "destructive" });
       return;
     }
-    toast({ title: "Thank you!", description: "We've received your details.", variant: "success" });
+    toast({ title: "Thank you!", description: "We've received your details.", variant: "default" });
     setForm({ name: "", email: "", company: "", interest: "" });
     setTimeout(() => onOpenChange(false), 900);
   };
