@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import WaitlistForm from '@/components/WaitlistForm';
@@ -8,6 +7,9 @@ import SignupCounter from '@/components/SignupCounter';
 import FAQSection from '@/components/FAQSection';
 import AnimatedSection from '@/components/AnimatedSection';
 import ParallaxBackground from '@/components/ParallaxBackground';
+import ParallaxHeroText from '@/components/ParallaxHeroText';
+import LeadForm from '@/components/LeadForm';
+import TeamSection from '@/components/TeamSection';
 import { 
   Rocket, 
   Brain, 
@@ -119,79 +121,75 @@ const Index = () => {
     }
   ];
 
+  const [formOpen, setFormOpen] = React.useState(false);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white overflow-hidden">
-      {/* Parallax animated background elements */}
-      <ParallaxBackground />
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-pink-50 to-indigo-100 overflow-hidden">
 
-      {/* Navigation */}
-      <nav className="relative z-10 p-4 md:p-6">
-        <AnimatedSection className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Rocket className="h-6 w-6 md:h-8 md:w-8 text-purple-400 transition-transform hover:scale-110" />
-            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              SkillSync
-            </span>
-          </div>
-          <Button 
-            variant="outline" 
-            className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300 hover:scale-105 text-sm md:text-base px-3 py-2 md:px-4 md:py-2"
-          >
-            Request Demo
-          </Button>
-        </AnimatedSection>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedSection animationType="fadeIn" delay={200}>
-            <div className="flex items-center justify-center mb-6">
-              <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-yellow-400 mr-2" />
-              <span className="text-sm md:text-base text-purple-300 font-medium">The Future of Hiring is Here</span>
-            </div>
-          </AnimatedSection>
-          
-          <AnimatedSection animationType="fadeUp" delay={400}>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Hire Amazing 
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                {" "}Tech Talent{" "}
-              </span>
-              in Days, Not Weeks
-            </h1>
-          </AnimatedSection>
-          
-          <AnimatedSection animationType="fadeUp" delay={600}>
-            <p className="text-lg md:text-xl text-purple-200 mb-8 max-w-2xl mx-auto leading-relaxed">
-              SkillSync is your AI-powered hiring copilot that finds, screens, and connects you with the perfect tech talent. 
-              Say goodbye to endless resume reviews and hello to efficient, smart hiring.
-            </p>
-          </AnimatedSection>
-          
-          <AnimatedSection animationType="scale" delay={800}>
-            <div className="mb-8 md:mb-12">
-              <WaitlistForm />
-            </div>
-          </AnimatedSection>
-          
-          <AnimatedSection animationType="fadeIn" delay={1000}>
-            <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-xs md:text-sm text-purple-300">
-              <div className="flex items-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-green-400" />
-                No credit card required
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-green-400" />
-                Early access pricing
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-green-400" />
-                Cancel anytime
-              </div>
-            </div>
-          </AnimatedSection>
+      {/* ParallaxHeroText & TOP LIVE COUNTER */}
+      <section className="relative z-20 pb-12 w-full flex flex-col items-center justify-center">
+        <div className="w-full flex flex-col items-center justify-center">
+          <SignupCounter />
         </div>
+        <ParallaxHeroText />
+        <Button
+          variant="default"
+          size="lg"
+          className="mt-6 bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-3 shadow-lg rounded-xl hover:scale-105 hover:shadow-xl transition-transform"
+          onClick={() => setFormOpen(true)}
+        >
+          Request Early Access
+        </Button>
+      </section>
+      <LeadForm open={formOpen} onOpenChange={setFormOpen} />
+
+      {/* Features - Use blob/soft-card layout as per your image reference */}
+      <section className="relative z-10 px-4 md:px-6 py-16 md:py-24 bg-transparent">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Why SkillSync?
+            </h2>
+            <ul className="space-y-4">
+              {features.map((feature, i) => (
+                <li key={feature.title} className="group relative flex items-center gap-4 p-5 rounded-2xl bg-white/70 hover:bg-gradient-to-br hover:from-pink-100 hover:to-purple-50 shadow-md hover:shadow-lg perspective-card transition-all duration-300">
+                  <span className="flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-200 to-pink-200 p-2 mr-2 shadow group-hover:scale-110 transition-transform">
+                    <feature.icon className="h-7 w-7 text-purple-800" />
+                  </span>
+                  <div>
+                    <div className="font-semibold text-lg text-purple-900">{feature.title}</div>
+                    <div className="text-purple-600">{feature.description}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="relative w-full max-w-xs md:max-w-md aspect-square flex items-center justify-center">
+              {/* Animated blob (soft, gradient, floating visual) */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-200 via-purple-100 to-indigo-200 blur-3xl opacity-40 animate-float"></div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-100 blur-lg opacity-70 animate-float" style={{ animationDuration: '7s', animationDelay: '2s' }}></div>
+              <span className="relative text-2xl md:text-3xl font-bold text-purple-600 drop-shadow-lg text-center px-4">AI Matches + Smart Discovery = <br />Effortless Hiring</span>
+            </div>
+          </div>
+        </div>
+        <style>
+          {`
+            .perspective-card {
+              transition: transform 0.45s cubic-bezier(.2,1,.2,1);
+              will-change: transform;
+            }
+            .perspective-card:hover {
+              transform: rotateY(4deg) scale(1.035);
+            }
+            @keyframes float {
+              0% { transform: translateY(0);}
+              50% { transform: translateY(-20px);}
+              100% { transform: translateY(0);}
+            }
+            .animate-float { animation: float 6s ease-in-out infinite;}
+          `}
+        </style>
       </section>
 
       {/* Pain Points Section */}
@@ -451,6 +449,9 @@ const Index = () => {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* Footer */}
       <footer className="relative z-10 px-4 md:px-6 py-8 md:py-12 border-t border-purple-800/30">
