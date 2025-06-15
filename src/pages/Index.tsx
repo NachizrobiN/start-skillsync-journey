@@ -130,9 +130,6 @@ const Index = () => {
 
       {/* ParallaxHeroText with adjusted top padding */}
       <section className="relative z-20 pt-24 pb-12 w-full flex flex-col items-center justify-center">
-        <div className="w-full flex flex-col items-center justify-center">
-          <SignupCounter />
-        </div>
         <ParallaxHeroText />
         <Button
           variant="default"
@@ -426,8 +423,6 @@ const Index = () => {
               <div className="mb-8">
                 <WaitlistForm />
               </div>
-              
-              <SignupCounter />
               
               <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 text-center">
                 <AnimatedSection animationType="fadeUp" delay={200}>
