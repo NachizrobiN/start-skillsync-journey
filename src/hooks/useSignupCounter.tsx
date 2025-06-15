@@ -28,19 +28,24 @@ export const useSignupCounter = () => {
   useEffect(() => {
     fetchCount();
 
+    // Create a unique channel name to avoid conflicts
+    const channelName = `waitlist-changes-${Math.random().toString(36).substr(2, 9)}`;
+    
     // Set up real-time subscription to listen for new signups
     const channel = supabase
-      .channel('waitlist-changes')
+      .channel(channelName)
       .on('postgres_changes', {
         event: 'INSERT',
         schema: 'public',
         table: 'waitlist_signups'
       }, () => {
+        console.log('New signup detected, refetching count...');
         fetchCount();
       })
       .subscribe();
 
     return () => {
+      console.log('Cleaning up subscription...');
       supabase.removeChannel(channel);
     };
   }, []);
