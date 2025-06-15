@@ -26,6 +26,8 @@ export default function ParallaxHeroText() {
             text-4xl sm:text-5xl md:text-7xl font-bold mb-2
             bg-gradient-to-r ${colors[idx % colors.length]} bg-clip-text text-transparent
             px-3
+            break-words whitespace-normal text-center block w-full 
+            overflow-visible
           `}
         >
           {str}
