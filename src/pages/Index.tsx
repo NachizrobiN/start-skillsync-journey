@@ -10,121 +10,73 @@ import ParallaxHeroText from '@/components/ParallaxHeroText';
 import LeadForm from '@/components/LeadForm';
 import TeamSection from '@/components/TeamSection';
 import Header from '@/components/Header';
-import { 
-  Rocket, 
-  Brain, 
-  Zap, 
-  Users, 
-  Target, 
-  Clock,
-  ArrowRight,
-  Sparkles,
-  CheckCircle,
-  Search,
-  MessageSquare,
-  Shield,
-  TrendingUp,
-  Award,
-  Heart
-} from 'lucide-react';
-
+import { Rocket, Brain, Zap, Users, Target, Clock, ArrowRight, Sparkles, CheckCircle, Search, MessageSquare, Shield, TrendingUp, Award, Heart } from 'lucide-react';
 const Index = () => {
-  const features = [
-    {
-      icon: Brain,
-      title: "AI-Powered Matching",
-      description: "Our smart algorithms understand skills beyond keywords, finding candidates who truly fit your needs."
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Reduce your hiring time from weeks to days with automated screening and smart recommendations."
-    },
-    {
-      icon: Target,
-      title: "Perfect Fit Every Time",
-      description: "Advanced matching ensures you connect with candidates who align with your culture and requirements."
-    }
-  ];
-
-  const detailedFeatures = [
-    {
-      icon: Search,
-      title: "Smart Candidate Discovery",
-      description: "AI scans thousands of profiles to surface hidden gems you'd never find manually. No more needle-in-haystack searching."
-    },
-    {
-      icon: MessageSquare,
-      title: "Automated Initial Screening",
-      description: "Pre-qualify candidates with intelligent questionnaires and skill assessments before they reach your inbox."
-    },
-    {
-      icon: Shield,
-      title: "Bias-Free Hiring",
-      description: "Make data-driven decisions with anonymized candidate scoring that focuses purely on skills and fit."
-    },
-    {
-      icon: TrendingUp,
-      title: "Hiring Analytics",
-      description: "Track your hiring funnel, optimize your process, and make smarter recruiting decisions with detailed insights."
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Chen",
-      role: "Head of Talent",
-      company: "TechFlow",
-      testimonial: "SkillSync transformed our hiring process. We found our best developers 3x faster than before.",
-      avatar: "SC"
-    },
-    {
-      name: "Mike Rodriguez",
-      role: "Founder",
-      company: "StartupX",
-      testimonial: "As a non-technical founder, SkillSync helped me understand and hire the right tech talent effortlessly.",
-      avatar: "MR"
-    },
-    {
-      name: "Lisa Park",
-      role: "Engineering Manager",
-      company: "InnovateCorp",
-      testimonial: "The AI recommendations are spot-on. It's like having a hiring expert who never sleeps.",
-      avatar: "LP"
-    }
-  ];
-
-  const benefits = [
-    "Save 80% of time on candidate screening",
-    "Reduce hiring costs by up to 60%",
-    "Improve candidate quality with AI matching",
-    "Eliminate hiring bias with data-driven decisions",
-    "Onboard faster with automated workflows"
-  ];
-
-  const painPoints = [
-    {
-      title: "Drowning in resumes",
-      description: "You post a job and get 500+ applications. Most aren't even close to what you need."
-    },
-    {
-      title: "Technical skills guessing game",
-      description: "Someone says they know React, but can they actually build what you need?"
-    },
-    {
-      title: "Culture fit mystery",
-      description: "They look great on paper, but will they mesh with your team's vibe?"
-    },
-    {
-      title: "Time black hole",
-      description: "Weeks of interviews later, you're back to square one with an empty chair."
-    }
-  ];
-
+  const features = [{
+    icon: Brain,
+    title: "AI-Powered Matching",
+    description: "Our smart algorithms understand skills beyond keywords, finding candidates who truly fit your needs."
+  }, {
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "Reduce your hiring time from weeks to days with automated screening and smart recommendations."
+  }, {
+    icon: Target,
+    title: "Perfect Fit Every Time",
+    description: "Advanced matching ensures you connect with candidates who align with your culture and requirements."
+  }];
+  const detailedFeatures = [{
+    icon: Search,
+    title: "Smart Candidate Discovery",
+    description: "AI scans thousands of profiles to surface hidden gems you'd never find manually. No more needle-in-haystack searching."
+  }, {
+    icon: MessageSquare,
+    title: "Automated Initial Screening",
+    description: "Pre-qualify candidates with intelligent questionnaires and skill assessments before they reach your inbox."
+  }, {
+    icon: Shield,
+    title: "Bias-Free Hiring",
+    description: "Make data-driven decisions with anonymized candidate scoring that focuses purely on skills and fit."
+  }, {
+    icon: TrendingUp,
+    title: "Hiring Analytics",
+    description: "Track your hiring funnel, optimize your process, and make smarter recruiting decisions with detailed insights."
+  }];
+  const testimonials = [{
+    name: "Sarah Chen",
+    role: "Head of Talent",
+    company: "TechFlow",
+    testimonial: "SkillSync transformed our hiring process. We found our best developers 3x faster than before.",
+    avatar: "SC"
+  }, {
+    name: "Mike Rodriguez",
+    role: "Founder",
+    company: "StartupX",
+    testimonial: "As a non-technical founder, SkillSync helped me understand and hire the right tech talent effortlessly.",
+    avatar: "MR"
+  }, {
+    name: "Lisa Park",
+    role: "Engineering Manager",
+    company: "InnovateCorp",
+    testimonial: "The AI recommendations are spot-on. It's like having a hiring expert who never sleeps.",
+    avatar: "LP"
+  }];
+  const benefits = ["Save 80% of time on candidate screening", "Reduce hiring costs by up to 60%", "Improve candidate quality with AI matching", "Eliminate hiring bias with data-driven decisions", "Onboard faster with automated workflows"];
+  const painPoints = [{
+    title: "Drowning in resumes",
+    description: "You post a job and get 500+ applications. Most aren't even close to what you need."
+  }, {
+    title: "Technical skills guessing game",
+    description: "Someone says they know React, but can they actually build what you need?"
+  }, {
+    title: "Culture fit mystery",
+    description: "They look great on paper, but will they mesh with your team's vibe?"
+  }, {
+    title: "Time black hole",
+    description: "Weeks of interviews later, you're back to square one with an empty chair."
+  }];
   const [formOpen, setFormOpen] = React.useState(false);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-slate-100 overflow-hidden">
+  return <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-slate-100 overflow-hidden">
       {/* Header */}
       <Header onRequestDemo={() => setFormOpen(true)} />
 
@@ -142,8 +94,7 @@ const Index = () => {
               Why SkillSync?
             </h2>
             <ul className="space-y-4">
-              {features.map((feature, i) => (
-                <li key={feature.title} className="group relative flex items-center gap-4 p-5 rounded-2xl bg-white/80 hover:bg-gradient-to-br hover:from-pink-50 hover:to-purple-50 shadow-md hover:shadow-lg perspective-card transition-all duration-300">
+              {features.map((feature, i) => <li key={feature.title} className="group relative flex items-center gap-4 p-5 rounded-2xl bg-white/80 hover:bg-gradient-to-br hover:from-pink-50 hover:to-purple-50 shadow-md hover:shadow-lg perspective-card transition-all duration-300">
                   <span className="flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-400 p-2 mr-2 shadow group-hover:scale-110 transition-transform">
                     <feature.icon className="h-7 w-7 text-white" />
                   </span>
@@ -151,15 +102,17 @@ const Index = () => {
                     <div className="font-semibold text-lg text-slate-800">{feature.title}</div>
                     <div className="text-slate-600">{feature.description}</div>
                   </div>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
           <div className="flex items-center justify-center">
             <div className="relative w-full max-w-xs md:max-w-md aspect-square flex items-center justify-center">
               {/* Animated blob (soft, gradient, floating visual) */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-200 via-purple-200 to-slate-200 blur-3xl opacity-40 animate-float"></div>
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-pink-300 via-purple-300 to-slate-300 blur-lg opacity-70 animate-float" style={{ animationDuration: '7s', animationDelay: '2s' }}></div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-pink-300 via-purple-300 to-slate-300 blur-lg opacity-70 animate-float" style={{
+              animationDuration: '7s',
+              animationDelay: '2s'
+            }}></div>
               <span className="relative text-2xl md:text-3xl font-bold text-slate-700 drop-shadow-lg text-center px-4">AI Matches + Smart Discovery = <br />Effortless Hiring</span>
             </div>
           </div>
@@ -194,19 +147,12 @@ const Index = () => {
           </AnimatedSection>
           
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {painPoints.map((point, index) => (
-              <AnimatedSection 
-                key={index} 
-                animationType="fadeUp" 
-                delay={index * 200}
-                className="group"
-              >
+            {painPoints.map((point, index) => <AnimatedSection key={index} animationType="fadeUp" delay={index * 200} className="group">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-pink-300/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:border-pink-300/40">
                   <h3 className="text-lg md:text-xl font-semibold text-white mb-3">{point.title}</h3>
                   <p className="text-pink-200 leading-relaxed text-sm md:text-base">{point.description}</p>
                 </div>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
           
           <AnimatedSection className="text-center mt-12" animationType="fadeIn" delay={800}>
@@ -228,24 +174,25 @@ const Index = () => {
           </AnimatedSection>
           
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-            {[
-              { icon: Search, title: "Find the hidden gems", description: "AI discovers talent you'd never find manually" },
-              { icon: Shield, title: "Screen with confidence", description: "Data-driven insights, not just gut feelings" },
-              { icon: Heart, title: "Build great teams", description: "Focus on culture fit, not just technical skills" }
-            ].map((item, index) => (
-              <AnimatedSection 
-                key={index} 
-                animationType="fadeUp" 
-                delay={index * 200}
-                className="text-center group"
-              >
+            {[{
+            icon: Search,
+            title: "Find the hidden gems",
+            description: "AI discovers talent you'd never find manually"
+          }, {
+            icon: Shield,
+            title: "Screen with confidence",
+            description: "Data-driven insights, not just gut feelings"
+          }, {
+            icon: Heart,
+            title: "Build great teams",
+            description: "Focus on culture fit, not just technical skills"
+          }].map((item, index) => <AnimatedSection key={index} animationType="fadeUp" delay={index * 200} className="text-center group">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <item.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">{item.title}</h3>
                 <p className="text-sm md:text-base text-pink-200">{item.description}</p>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
           
           <AnimatedSection animationType="slideLeft" delay={600}>
@@ -267,18 +214,11 @@ const Index = () => {
           </AnimatedSection>
           
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {detailedFeatures.map((feature, index) => (
-              <AnimatedSection 
-                key={index} 
-                animationType="fadeUp" 
-                delay={index * 200}
-                className="group"
-              >
+            {detailedFeatures.map((feature, index) => <AnimatedSection key={index} animationType="fadeUp" delay={index * 200} className="group">
                 <div className="transform transition-all duration-300 hover:scale-105">
                   <FeatureCard {...feature} />
                 </div>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
         </div>
       </section>
@@ -303,22 +243,23 @@ const Index = () => {
           </AnimatedSection>
           
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
-            {[
-              { icon: Award, title: "No Settling", description: "Find candidates who actually fit your needs" },
-              { icon: TrendingUp, title: "No Guessing", description: "Data-driven insights for confident decisions" },
-              { icon: Clock, title: "No Waiting", description: "Fill positions faster with smart automation" }
-            ].map((item, index) => (
-              <AnimatedSection 
-                key={index} 
-                animationType="fadeUp" 
-                delay={index * 200}
-                className="text-center group"
-              >
+            {[{
+            icon: Award,
+            title: "No Settling",
+            description: "Find candidates who actually fit your needs"
+          }, {
+            icon: TrendingUp,
+            title: "No Guessing",
+            description: "Data-driven insights for confident decisions"
+          }, {
+            icon: Clock,
+            title: "No Waiting",
+            description: "Fill positions faster with smart automation"
+          }].map((item, index) => <AnimatedSection key={index} animationType="fadeUp" delay={index * 200} className="text-center group">
                 <item.icon className="h-10 w-10 md:h-12 md:w-12 text-purple-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-lg md:text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm md:text-base text-purple-200">{item.description}</p>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
           
           <AnimatedSection animationType="fadeIn" delay={600}>
@@ -341,19 +282,12 @@ const Index = () => {
           </AnimatedSection>
           
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            {benefits.map((benefit, index) => (
-              <AnimatedSection 
-                key={index} 
-                animationType="slideRight" 
-                delay={index * 100}
-                className="group"
-              >
+            {benefits.map((benefit, index) => <AnimatedSection key={index} animationType="slideRight" delay={index * 100} className="group">
                 <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300">
                   <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-green-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-base md:text-lg text-purple-100">{benefit}</span>
                 </div>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
         </div>
       </section>
@@ -369,18 +303,11 @@ const Index = () => {
           </AnimatedSection>
           
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection 
-                key={index} 
-                animationType="fadeUp" 
-                delay={index * 200}
-                className="group"
-              >
+            {testimonials.map((testimonial, index) => <AnimatedSection key={index} animationType="fadeUp" delay={index * 200} className="group">
                 <div className="transform transition-all duration-300 hover:scale-105">
                   <TestimonialCard {...testimonial} />
                 </div>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
         </div>
       </section>
@@ -418,12 +345,12 @@ const Index = () => {
               
               <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 text-center">
                 <AnimatedSection animationType="fadeUp" delay={200}>
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">500+</div>
-                  <div className="text-pink-300 text-xs md:text-sm">On the waitlist</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">5+</div>
+                  <div className="text-pink-300 text-xs md:text-sm">Recruiters already joined</div>
                 </AnimatedSection>
                 <AnimatedSection animationType="fadeUp" delay={400}>
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">0</div>
-                  <div className="text-pink-300 text-xs md:text-sm">Bad hires made</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">10+</div>
+                  <div className="text-pink-300 text-xs md:text-sm">Candidates signed in</div>
                 </AnimatedSection>
                 <AnimatedSection animationType="fadeUp" delay={600}>
                   <div className="text-2xl md:text-3xl font-bold text-white mb-2">100%</div>
@@ -431,9 +358,7 @@ const Index = () => {
                 </AnimatedSection>
               </div>
               
-              <p className="text-xs md:text-sm text-pink-300 mt-6">
-                Be among the first 1,000 users and get lifetime early access pricing 🚀
-              </p>
+              <p className="text-xs md:text-sm text-pink-300 mt-6">Be among the first 100 users and get lifetime early access pricing 🚀</p>
             </div>
           </AnimatedSection>
         </div>
@@ -460,22 +385,23 @@ const Index = () => {
               </div>
             </AnimatedSection>
             
-            {[
-              { title: "Product", items: ["Features", "Pricing", "Demo"] },
-              { title: "Company", items: ["About", "Blog", "Careers"] },
-              { title: "Support", items: ["Help Center", "Contact", "Privacy Policy"] }
-            ].map((section, index) => (
-              <AnimatedSection key={section.title} animationType="fadeUp" delay={index * 100}>
+            {[{
+            title: "Product",
+            items: ["Features", "Pricing", "Demo"]
+          }, {
+            title: "Company",
+            items: ["About", "Blog", "Careers"]
+          }, {
+            title: "Support",
+            items: ["Help Center", "Contact", "Privacy Policy"]
+          }].map((section, index) => <AnimatedSection key={section.title} animationType="fadeUp" delay={index * 100}>
                 <div>
                   <h4 className="font-semibold text-white mb-3 text-sm md:text-base">{section.title}</h4>
                   <div className="space-y-2 text-xs md:text-sm text-pink-300">
-                    {section.items.map((item) => (
-                      <div key={item} className="hover:text-pink-200 transition-colors cursor-pointer">{item}</div>
-                    ))}
+                    {section.items.map(item => <div key={item} className="hover:text-pink-200 transition-colors cursor-pointer">{item}</div>)}
                   </div>
                 </div>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
           
           <AnimatedSection className="text-center pt-6 md:pt-8 border-t border-purple-800/30">
@@ -488,8 +414,6 @@ const Index = () => {
           </AnimatedSection>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
