@@ -77,7 +77,14 @@ const Index = () => {
   }];
   const [formOpen, setFormOpen] = React.useState(false);
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-pink-100 via-purple-100 to-slate-100 overflow-hidden">
+    <div
+      className="min-h-screen w-full bg-gradient-to-br from-[#231942] via-[#2a145c] to-[#25213d] overflow-hidden"
+      /* A seamless deep purple/navy gradient from left top to bottom right */
+      style={{
+        background:
+          "linear-gradient(120deg, #231942 0%, #2a145c 60%, #25213d 100%)",
+      }}
+    >
       {/* Header */}
       <Header onRequestDemo={() => setFormOpen(true)} />
 
@@ -91,33 +98,36 @@ const Index = () => {
       <section className="relative z-10 px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               Why SkillSync?
             </h2>
             <ul className="space-y-4">
-              {features.map((feature, i) => <li key={feature.title} className="group relative flex items-center gap-4 p-5 rounded-2xl bg-white/80 hover:bg-gradient-to-br hover:from-pink-50 hover:to-purple-50 shadow-md hover:shadow-lg perspective-card transition-all duration-300">
-                  <span className="flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-400 p-2 mr-2 shadow group-hover:scale-110 transition-transform">
+              {features.map((feature, i) => (
+                <li key={feature.title} className="group relative flex items-center gap-4 p-5 rounded-2xl bg-white/5 hover:bg-white/10 shadow-md hover:shadow-lg perspective-card transition-all duration-300">
+                  <span className="flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-pink-500 p-2 mr-2 shadow group-hover:scale-110 transition-transform">
                     <feature.icon className="h-7 w-7 text-white" />
                   </span>
                   <div>
-                    <div className="font-semibold text-lg text-slate-800">{feature.title}</div>
-                    <div className="text-slate-600">{feature.description}</div>
+                    <div className="font-semibold text-lg text-white">{feature.title}</div>
+                    <div className="text-purple-200">{feature.description}</div>
                   </div>
-                </li>)}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex items-center justify-center">
             <div className="relative w-full max-w-xs md:max-w-md aspect-square flex items-center justify-center">
               {/* Animated blob (soft, gradient, floating visual) */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-200 via-purple-200 to-slate-200 blur-3xl opacity-40 animate-float"></div>
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-pink-300 via-purple-300 to-slate-300 blur-lg opacity-70 animate-float" style={{
-              animationDuration: '7s',
-              animationDelay: '2s'
-            }}></div>
-              <span className="relative text-2xl md:text-3xl font-bold text-slate-700 drop-shadow-lg text-center px-4">AI Matches + Smart Discovery = <br />Effortless Hiring</span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-800 via-purple-700 to-pink-700 blur-3xl opacity-30 animate-float"></div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-purple-600 via-pink-600 to-purple-900 blur-lg opacity-50 animate-float" style={{
+                animationDuration: '7s',
+                animationDelay: '2s'
+              }}></div>
+              <span className="relative text-2xl md:text-3xl font-bold text-white drop-shadow-lg text-center px-4">AI Matches + Smart Discovery = <br />Effortless Hiring</span>
             </div>
           </div>
         </div>
+        {/* ... keep existing styles for perspective-card and float ... */}
         <style>
           {`
             .perspective-card {
@@ -142,22 +152,22 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">When Hiring Feels Like a Nightmare</h2>
-            <p className="text-lg md:text-xl text-pink-200 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-purple-200 max-w-2xl mx-auto">
               Sound familiar? You're definitely not alone in this struggle.
             </p>
           </AnimatedSection>
-          
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {painPoints.map((point, index) => <AnimatedSection key={index} animationType="fadeUp" delay={index * 200} className="group">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-pink-300/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:border-pink-300/40">
+            {painPoints.map((point, index) => (
+              <AnimatedSection key={index} animationType="fadeUp" delay={index * 200} className="group">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-purple-400">
                   <h3 className="text-lg md:text-xl font-semibold text-white mb-3">{point.title}</h3>
-                  <p className="text-pink-200 leading-relaxed text-sm md:text-base">{point.description}</p>
+                  <p className="text-purple-200 leading-relaxed text-sm md:text-base">{point.description}</p>
                 </div>
-              </AnimatedSection>)}
+              </AnimatedSection>
+            ))}
           </div>
-          
           <AnimatedSection className="text-center mt-12" animationType="fadeIn" delay={800}>
-            <p className="text-xl md:text-2xl text-pink-200 italic">
+            <p className="text-xl md:text-2xl text-purple-200 italic">
               "What if there was a better way to find the right people, without all the chaos?"
             </p>
           </AnimatedSection>
