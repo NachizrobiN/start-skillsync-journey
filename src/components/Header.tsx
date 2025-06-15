@@ -23,13 +23,13 @@ const Header = ({
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-white-700 hover:text-purple-600 transition-colors font-medium">
+            <a href="#features" className="text-white hover:text-purple-600 transition-colors font-medium">
               Features
             </a>
-            <a href="#testimonials" className="text-slate-700 hover:text-purple-600 transition-colors font-medium">
+            <a href="#testimonials" className="text-white hover:text-purple-600 transition-colors font-medium">
               Testimonials
             </a>
-            <a href="#faq" className="text-slate-700 hover:text-purple-600 transition-colors font-medium">
+            <a href="#faq" className="text-white hover:text-purple-600 transition-colors font-medium">
               FAQ
             </a>
           </nav>
