@@ -1,5 +1,6 @@
 
 import React from "react";
+import WaitlistForm from "./WaitlistForm";
 
 const STRINGS = [
   "AI-powered Hiring",
@@ -16,7 +17,6 @@ const colors = [
 ];
 
 export default function ParallaxHeroText() {
-  // Simple floating animation for each line
   return (
     <div className="relative w-full flex flex-col items-center min-h-[320px] select-none py-8 overflow-hidden">
       {STRINGS.map((str, idx) => (
@@ -25,31 +25,20 @@ export default function ParallaxHeroText() {
           className={`
             text-4xl sm:text-5xl md:text-7xl font-bold mb-2
             bg-gradient-to-r ${colors[idx % colors.length]} bg-clip-text text-transparent
-            animate-float
             px-3
           `}
-          style={{
-            animationDuration: `${5 + idx * 0.8}s`,
-            animationDelay: `${idx * 0.5}s`
-          }}
         >
           {str}
         </span>
       ))}
-      <style>
-        {`
-        @keyframes float {
-          0% { transform: translateY(0px);}
-          50% { transform: translateY(-18px);}
-          100% { transform: translateY(0px);}
-        }
-        .animate-float {
-          animation-name: float;
-          animation-timing-function: ease-in-out;
-          animation-iteration-count: infinite;
-        }
-        `}
-      </style>
+      
+      {/* Email waitlist input area */}
+      <div className="mt-8 w-full max-w-md">
+        <h3 className="text-xl md:text-2xl font-semibold text-slate-700 mb-4 text-center">
+          Join the Waitlist
+        </h3>
+        <WaitlistForm />
+      </div>
     </div>
   );
 }

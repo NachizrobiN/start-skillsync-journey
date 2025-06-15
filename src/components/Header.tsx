@@ -1,9 +1,14 @@
 
 import React from 'react';
 import { Rocket } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import SignupCounter from './SignupCounter';
 
-const Header = () => {
+interface HeaderProps {
+  onRequestDemo: () => void;
+}
+
+const Header = ({ onRequestDemo }: HeaderProps) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
@@ -31,9 +36,19 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Signup Counter */}
-          <div className="flex items-center">
-            <SignupCounter />
+          {/* Request Demo Button and Signup Counter */}
+          <div className="flex items-center space-x-4">
+            <Button
+              variant="default"
+              size="sm"
+              className="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-2 shadow-lg rounded-xl hover:scale-105 hover:shadow-xl transition-transform"
+              onClick={onRequestDemo}
+            >
+              Request Demo
+            </Button>
+            <div className="hidden lg:block">
+              <SignupCounter />
+            </div>
           </div>
         </div>
       </div>

@@ -126,19 +126,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-slate-100 overflow-hidden">
       {/* Header */}
-      <Header />
+      <Header onRequestDemo={() => setFormOpen(true)} />
 
       {/* ParallaxHeroText with adjusted top padding */}
       <section className="relative z-20 pt-24 pb-12 w-full flex flex-col items-center justify-center">
         <ParallaxHeroText />
-        <Button
-          variant="default"
-          size="lg"
-          className="mt-6 bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-3 shadow-lg rounded-xl hover:scale-105 hover:shadow-xl transition-transform"
-          onClick={() => setFormOpen(true)}
-        >
-          Request Early Access
-        </Button>
       </section>
       <LeadForm open={formOpen} onOpenChange={setFormOpen} />
 
