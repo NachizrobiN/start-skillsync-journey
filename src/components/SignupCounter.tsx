@@ -15,7 +15,7 @@ const SignupCounter = () => {
         ) : (
           <>
             <span className="font-bold text-white">{count.toLocaleString()}</span>
-            {count === 1 ? ' person has' : ' people have'} joined the waitlist
+            {' people have signed up today'}
           </>
         )}
       </span>
