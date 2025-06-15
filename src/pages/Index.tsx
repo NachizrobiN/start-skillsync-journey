@@ -124,7 +124,7 @@ const Index = () => {
   const [formOpen, setFormOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-pink-50 to-indigo-100 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-slate-100 overflow-hidden">
 
       {/* ParallaxHeroText & TOP LIVE COUNTER */}
       <section className="relative z-20 pb-12 w-full flex flex-col items-center justify-center">
@@ -147,18 +147,18 @@ const Index = () => {
       <section className="relative z-10 px-4 md:px-6 py-16 md:py-24 bg-transparent">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
               Why SkillSync?
             </h2>
             <ul className="space-y-4">
               {features.map((feature, i) => (
-                <li key={feature.title} className="group relative flex items-center gap-4 p-5 rounded-2xl bg-white/70 hover:bg-gradient-to-br hover:from-pink-100 hover:to-purple-50 shadow-md hover:shadow-lg perspective-card transition-all duration-300">
-                  <span className="flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-200 to-pink-200 p-2 mr-2 shadow group-hover:scale-110 transition-transform">
-                    <feature.icon className="h-7 w-7 text-purple-800" />
+                <li key={feature.title} className="group relative flex items-center gap-4 p-5 rounded-2xl bg-white/80 hover:bg-gradient-to-br hover:from-pink-50 hover:to-purple-50 shadow-md hover:shadow-lg perspective-card transition-all duration-300">
+                  <span className="flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-400 p-2 mr-2 shadow group-hover:scale-110 transition-transform">
+                    <feature.icon className="h-7 w-7 text-white" />
                   </span>
                   <div>
-                    <div className="font-semibold text-lg text-purple-900">{feature.title}</div>
-                    <div className="text-purple-600">{feature.description}</div>
+                    <div className="font-semibold text-lg text-slate-800">{feature.title}</div>
+                    <div className="text-slate-600">{feature.description}</div>
                   </div>
                 </li>
               ))}
@@ -167,9 +167,9 @@ const Index = () => {
           <div className="flex items-center justify-center">
             <div className="relative w-full max-w-xs md:max-w-md aspect-square flex items-center justify-center">
               {/* Animated blob (soft, gradient, floating visual) */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-200 via-purple-100 to-indigo-200 blur-3xl opacity-40 animate-float"></div>
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-100 blur-lg opacity-70 animate-float" style={{ animationDuration: '7s', animationDelay: '2s' }}></div>
-              <span className="relative text-2xl md:text-3xl font-bold text-purple-600 drop-shadow-lg text-center px-4">AI Matches + Smart Discovery = <br />Effortless Hiring</span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-200 via-purple-200 to-slate-200 blur-3xl opacity-40 animate-float"></div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-pink-300 via-purple-300 to-slate-300 blur-lg opacity-70 animate-float" style={{ animationDuration: '7s', animationDelay: '2s' }}></div>
+              <span className="relative text-2xl md:text-3xl font-bold text-slate-700 drop-shadow-lg text-center px-4">AI Matches + Smart Discovery = <br />Effortless Hiring</span>
             </div>
           </div>
         </div>
@@ -193,11 +193,11 @@ const Index = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-slate-800">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">When Hiring Feels Like a Nightmare</h2>
-            <p className="text-lg md:text-xl text-purple-200 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">When Hiring Feels Like a Nightmare</h2>
+            <p className="text-lg md:text-xl text-pink-200 max-w-2xl mx-auto">
               Sound familiar? You're definitely not alone in this struggle.
             </p>
           </AnimatedSection>
@@ -210,16 +210,16 @@ const Index = () => {
                 delay={index * 200}
                 className="group"
               >
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-purple-300/20 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-purple-300/40">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-pink-300/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:border-pink-300/40">
                   <h3 className="text-lg md:text-xl font-semibold text-white mb-3">{point.title}</h3>
-                  <p className="text-purple-200 leading-relaxed text-sm md:text-base">{point.description}</p>
+                  <p className="text-pink-200 leading-relaxed text-sm md:text-base">{point.description}</p>
                 </div>
               </AnimatedSection>
             ))}
           </div>
           
           <AnimatedSection className="text-center mt-12" animationType="fadeIn" delay={800}>
-            <p className="text-xl md:text-2xl text-purple-200 italic">
+            <p className="text-xl md:text-2xl text-pink-200 italic">
               "What if there was a better way to find the right people, without all the chaos?"
             </p>
           </AnimatedSection>
@@ -227,11 +227,11 @@ const Index = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-700 via-slate-700 to-slate-800">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">From Hiring Chaos to Perfect Matches</h2>
-            <p className="text-lg md:text-xl text-purple-200 mb-12 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">From Hiring Chaos to Perfect Matches</h2>
+            <p className="text-lg md:text-xl text-pink-200 mb-12 max-w-2xl mx-auto">
               SkillSync doesn't promise magic — it gives you the right tools to make smart, confident hiring decisions.
             </p>
           </AnimatedSection>
@@ -251,14 +251,14 @@ const Index = () => {
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <item.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm md:text-base text-purple-200">{item.description}</p>
+                <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">{item.title}</h3>
+                <p className="text-sm md:text-base text-pink-200">{item.description}</p>
               </AnimatedSection>
             ))}
           </div>
           
           <AnimatedSection animationType="slideLeft" delay={600}>
-            <blockquote className="text-lg md:text-2xl text-purple-200 italic border-l-4 border-purple-400 pl-4 md:pl-6 mb-8">
+            <blockquote className="text-lg md:text-2xl text-pink-200 italic border-l-4 border-pink-400 pl-4 md:pl-6 mb-8">
               "Because great teams aren't built by accident — they're discovered with intention."
             </blockquote>
           </AnimatedSection>
@@ -266,7 +266,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-slate-800 via-purple-800 to-purple-900">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">How SkillSync Transforms Your Hiring</h2>
@@ -293,7 +293,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-900 to-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -340,7 +340,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-slate-900 to-purple-900">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">What You'll Actually Get</h2>
@@ -368,7 +368,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-900 via-slate-800 to-purple-800">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Loved by Hiring Teams</h2>
@@ -395,7 +395,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-800 to-slate-800">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Questions? We've Got Answers</h2>
@@ -411,13 +411,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-slate-800 to-purple-900">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animationType="scale">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-purple-300/20 hover:bg-white/15 transition-all duration-500">
-              <Clock className="h-12 w-12 md:h-16 md:w-16 text-purple-400 mx-auto mb-6 animate-pulse" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Hiring?</h2>
-              <p className="text-lg md:text-xl text-purple-200 mb-8 max-w-2xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-pink-300/20 hover:bg-white/15 transition-all duration-500">
+              <Clock className="h-12 w-12 md:h-16 md:w-16 text-pink-400 mx-auto mb-6 animate-pulse" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Transform Your Hiring?</h2>
+              <p className="text-lg md:text-xl text-pink-200 mb-8 max-w-2xl mx-auto">
                 Join thousands of forward-thinking companies who are already using AI to hire better, faster, and smarter.
               </p>
               
@@ -430,19 +430,19 @@ const Index = () => {
               <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 text-center">
                 <AnimatedSection animationType="fadeUp" delay={200}>
                   <div className="text-2xl md:text-3xl font-bold text-white mb-2">500+</div>
-                  <div className="text-purple-300 text-xs md:text-sm">On the waitlist</div>
+                  <div className="text-pink-300 text-xs md:text-sm">On the waitlist</div>
                 </AnimatedSection>
                 <AnimatedSection animationType="fadeUp" delay={400}>
                   <div className="text-2xl md:text-3xl font-bold text-white mb-2">0</div>
-                  <div className="text-purple-300 text-xs md:text-sm">Bad hires made</div>
+                  <div className="text-pink-300 text-xs md:text-sm">Bad hires made</div>
                 </AnimatedSection>
                 <AnimatedSection animationType="fadeUp" delay={600}>
                   <div className="text-2xl md:text-3xl font-bold text-white mb-2">100%</div>
-                  <div className="text-purple-300 text-xs md:text-sm">Smart hiring guaranteed</div>
+                  <div className="text-pink-300 text-xs md:text-sm">Smart hiring guaranteed</div>
                 </AnimatedSection>
               </div>
               
-              <p className="text-xs md:text-sm text-purple-300 mt-6">
+              <p className="text-xs md:text-sm text-pink-300 mt-6">
                 Be among the first 1,000 users and get lifetime early access pricing 🚀
               </p>
             </div>
@@ -454,18 +454,18 @@ const Index = () => {
       <TeamSection />
 
       {/* Footer */}
-      <footer className="relative z-10 px-4 md:px-6 py-8 md:py-12 border-t border-purple-800/30">
+      <footer className="relative z-10 px-4 md:px-6 py-8 md:py-12 border-t border-purple-800/30 bg-slate-900">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
             <AnimatedSection animationType="fadeUp">
               <div className="col-span-2 md:col-span-1">
                 <div className="flex items-center space-x-2 mb-4">
-                  <Rocket className="h-5 w-5 md:h-6 md:w-6 text-purple-400" />
+                  <Rocket className="h-5 w-5 md:h-6 md:w-6 text-pink-400" />
                   <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                     SkillSync
                   </span>
                 </div>
-                <p className="text-xs md:text-sm text-purple-300">
+                <p className="text-xs md:text-sm text-pink-300">
                   AI-powered hiring that finds the right talent faster.
                 </p>
               </div>
@@ -479,9 +479,9 @@ const Index = () => {
               <AnimatedSection key={section.title} animationType="fadeUp" delay={index * 100}>
                 <div>
                   <h4 className="font-semibold text-white mb-3 text-sm md:text-base">{section.title}</h4>
-                  <div className="space-y-2 text-xs md:text-sm text-purple-300">
+                  <div className="space-y-2 text-xs md:text-sm text-pink-300">
                     {section.items.map((item) => (
-                      <div key={item} className="hover:text-purple-200 transition-colors cursor-pointer">{item}</div>
+                      <div key={item} className="hover:text-pink-200 transition-colors cursor-pointer">{item}</div>
                     ))}
                   </div>
                 </div>
@@ -490,10 +490,10 @@ const Index = () => {
           </div>
           
           <AnimatedSection className="text-center pt-6 md:pt-8 border-t border-purple-800/30">
-            <p className="text-purple-300 text-xs md:text-sm mb-2">
+            <p className="text-pink-300 text-xs md:text-sm mb-2">
               © 2024 SkillSync. Built with ❤️ for the future of hiring.
             </p>
-            <p className="text-purple-400 text-xs">
+            <p className="text-pink-400 text-xs">
               Not a replacement for good hiring practices — just better tools to execute them.
             </p>
           </AnimatedSection>

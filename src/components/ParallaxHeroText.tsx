@@ -9,10 +9,10 @@ const STRINGS = [
 ];
 
 const colors = [
-  "from-pink-300 to-purple-400",
-  "from-yellow-200 to-pink-400",
-  "from-indigo-300 to-blue-700",
-  "from-teal-300 to-green-400"
+  "from-pink-400 to-purple-500",
+  "from-purple-400 to-pink-500",
+  "from-slate-600 to-purple-600",
+  "from-purple-500 to-slate-600"
 ];
 
 export default function ParallaxHeroText() {
