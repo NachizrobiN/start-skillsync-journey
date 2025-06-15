@@ -76,7 +76,8 @@ const Index = () => {
     description: "Weeks of interviews later, you're back to square one with an empty chair."
   }];
   const [formOpen, setFormOpen] = React.useState(false);
-  return <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-slate-100 overflow-hidden">
+  return (
+    <div className="min-h-screen w-full bg-gradient-to-br from-pink-100 via-purple-100 to-slate-100 overflow-hidden">
       {/* Header */}
       <Header onRequestDemo={() => setFormOpen(true)} />
 
@@ -86,8 +87,8 @@ const Index = () => {
       </section>
       <LeadForm open={formOpen} onOpenChange={setFormOpen} />
 
-      {/* Features - Use blob/soft-card layout as per your image reference */}
-      <section className="relative z-10 px-4 md:px-6 py-16 md:py-24 bg-transparent" id="features">
+      {/* Features */}
+      <section className="relative z-10 px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
@@ -137,7 +138,7 @@ const Index = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-slate-800">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">When Hiring Feels Like a Nightmare</h2>
@@ -164,7 +165,7 @@ const Index = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-700 via-slate-700 to-slate-800">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">From Hiring Chaos to Perfect Matches</h2>
@@ -203,8 +204,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-slate-800 via-purple-800 to-purple-900">
+      {/* Features Detail Section */}
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">How SkillSync Transforms Your Hiring</h2>
@@ -224,7 +225,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-900 to-slate-900">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -272,7 +273,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-slate-900 to-purple-900">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">What You'll Actually Get</h2>
@@ -293,7 +294,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-900 via-slate-800 to-purple-800" id="testimonials">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20" id="testimonials">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Loved by Hiring Teams</h2>
@@ -313,7 +314,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-800 to-slate-800" id="faq">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20" id="faq">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Questions? We've Got Answers</h2>
@@ -329,7 +330,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-slate-800 to-purple-900">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animationType="scale">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-pink-300/20 hover:bg-white/15 transition-all duration-500">
@@ -414,6 +415,7 @@ const Index = () => {
           </AnimatedSection>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
 export default Index;
