@@ -59,7 +59,7 @@ const WaitlistForm = () => {
   return <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
       <div className="relative flex-1">
         <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-purple-400" />
-        <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} disabled={isSubmitting} className="pl-10 bg-white/10 border-purple-300/30 text-white placeholder:text-purple-600 focus:border-purple-400 focus:ring-purple-400" />
+        <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} disabled={isSubmitting} className="pl-10 bg-white/10 border-purple-300/30 text-black placeholder:text-purple-600 focus:border-purple-400 focus:ring-purple-400" />
       </div>
       <Button type="submit" disabled={isSubmitting} className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
         {isSubmitting ? <>
