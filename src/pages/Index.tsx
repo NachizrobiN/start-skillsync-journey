@@ -3,13 +3,13 @@ import { Button } from '@/components/ui/button';
 import WaitlistForm from '@/components/WaitlistForm';
 import FeatureCard from '@/components/FeatureCard';
 import TestimonialCard from '@/components/TestimonialCard';
-import SignupCounter from '@/components/SignupCounter';
 import FAQSection from '@/components/FAQSection';
 import AnimatedSection from '@/components/AnimatedSection';
 import ParallaxBackground from '@/components/ParallaxBackground';
 import ParallaxHeroText from '@/components/ParallaxHeroText';
 import LeadForm from '@/components/LeadForm';
 import TeamSection from '@/components/TeamSection';
+import Header from '@/components/Header';
 import { 
   Rocket, 
   Brain, 
@@ -125,9 +125,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-slate-100 overflow-hidden">
+      {/* Header */}
+      <Header />
 
-      {/* ParallaxHeroText & TOP LIVE COUNTER */}
-      <section className="relative z-20 pb-12 w-full flex flex-col items-center justify-center">
+      {/* ParallaxHeroText with adjusted top padding */}
+      <section className="relative z-20 pt-24 pb-12 w-full flex flex-col items-center justify-center">
         <div className="w-full flex flex-col items-center justify-center">
           <SignupCounter />
         </div>
@@ -144,7 +146,7 @@ const Index = () => {
       <LeadForm open={formOpen} onOpenChange={setFormOpen} />
 
       {/* Features - Use blob/soft-card layout as per your image reference */}
-      <section className="relative z-10 px-4 md:px-6 py-16 md:py-24 bg-transparent">
+      <section className="relative z-10 px-4 md:px-6 py-16 md:py-24 bg-transparent" id="features">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-800">
@@ -368,7 +370,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-900 via-slate-800 to-purple-800">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-900 via-slate-800 to-purple-800" id="testimonials">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Loved by Hiring Teams</h2>
@@ -395,7 +397,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-800 to-slate-800">
+      <section className="relative z-10 px-4 md:px-6 py-12 md:py-20 bg-gradient-to-br from-purple-800 to-slate-800" id="faq">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Questions? We've Got Answers</h2>
